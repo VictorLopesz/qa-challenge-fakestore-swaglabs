@@ -8,7 +8,7 @@ Includes:
 - API tests (validate "electronics" products with rate > 4)
 - UI tests (validate product sorting on SwagLabs page)
 - **Page Object Model (POM)** structure
-- Runner and report setup for GitLab CI/CD
+- Runner and report setup for CI/CD pipelines
 
 ## Prerequisites
 
@@ -17,11 +17,11 @@ Includes:
 - Git
 
 ** Installation **
+```bash
 
 Clone the repository:
 
-```bash
-git clone https://gitlab.com/victorhlopesqa-challenge-fakestore-swaglabs.git
+git clone https://github.com/VictorLopesz/qa-challenge-fakestore-swaglabs.git
 
 ** Navigate to the project folder: **
 cd qa-challenge-fakestore-swaglabs
@@ -42,33 +42,31 @@ cypress/screenshots/
 cypress/videos/
 cypress/results/
 
-## Running Tests in GitLab CI/CD
+## Running Tests in CI/CD
+The pipeline is already configured in .github/workflows/cypress.yml.
 
-- The GitLab pipeline is already configured in .gitlab-ci.yml.
+When pushing to the main branch, the CI/CD automatically executes all tests.
 
-- When pushing to the main branch, GitLab CI automatically executes all tests.
+Artifacts from the pipeline include videos, screenshots, and JUnit reports.
 
-- Artifacts from the pipeline include videos, screenshots, and JUnit reports.
+### Viewing Reports in CI/CD
+Go to your GitHub repository → Actions → click the latest workflow.
 
-### Viewing Reports in GitLab
+Open the Cypress job.
 
-1. Go to your project → CI/CD → Pipelines → click the latest pipeline.
+Under Artifacts, you will find:
 
-2. Open the cypress-tests job.
+cypress/videos/ → test execution videos
 
-3. Under the Artifacts tab, you will find:
+cypress/screenshots/ → screenshots of failures
 
-- cypress/videos/ → test execution videos
-
-- cypress/screenshots/ → screenshots of failures
-
-- results/ → JUnit reports (can be opened with HTML viewers or VSCode plugins)
+results/ → JUnit reports (can be opened with HTML viewers or VSCode plugins)
 
 🔹 Tip: Use JUnit Viewer or VSCode plugins to view JUnit reports as HTML.
 
 ## Project Structure
 
-challenge-fakestore-swaglabs/
+qa-challenge-fakestore-swaglabs/
 │
 ├─ cypress/                 # UI and API tests
 ├─ node_modules/            # project dependencies
@@ -76,5 +74,6 @@ challenge-fakestore-swaglabs/
 ├─ package-lock.json
 ├─ cypress.config.js
 ├─ .gitignore
-└─ .gitlab-ci.yml           # CI/CD pipeline configuration
+└─ .github/workflows/cypress.yml   # CI/CD pipeline configuration
+
 ```
