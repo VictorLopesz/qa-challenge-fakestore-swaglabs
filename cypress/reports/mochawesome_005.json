@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-08-25T00:49:33.166Z",
+    "end": "2025-08-25T00:49:41.790Z",
+    "duration": 8624,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cb5c1824-160c-4370-a2b2-388988cd1ade",
+      "title": "",
+      "fullFile": "cypress\\e2e\\ui-tests\\swagLabs.cy.js",
+      "file": "cypress\\e2e\\ui-tests\\swagLabs.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8bd44ca7-7480-42a8-b465-d53d76149084",
+          "title": "SwagLabs UI Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify sorting Name A → Z and change to Z → A",
+              "fullTitle": "SwagLabs UI Test Verify sorting Name A → Z and change to Z → A",
+              "timedOut": null,
+              "duration": 8591,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.visit();\nloginPage.login(\"standard_user\", \"secret_sauce\");\nloginPage.isLoginSuccessful();\ninventoryPage.sortProducts(\"asc\");\ninventoryPage.verifyProductOrder(\"desc\");",
+              "err": {
+                "message": "CypressError: Timed out retrying after 4000ms: `cy.select()` failed because it could not find a single `<option>` with value, index, or text matching: `asc`\n\nhttps://on.cypress.io/select",
+                "estack": "CypressError: Timed out retrying after 4000ms: `cy.select()` failed because it could not find a single `<option>` with value, index, or text matching: `asc`\n\nhttps://on.cypress.io/select\n    at getOptions (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:115451:72)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4285:29)\n    at retryOptions (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:115483:70)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:147282:68)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:147223:14)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:5420:46)",
+                "diff": null
+              },
+              "uuid": "9d2a1c72-e49a-4676-803c-a1b4564984d8",
+              "parentUUID": "8bd44ca7-7480-42a8-b465-d53d76149084",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "9d2a1c72-e49a-4676-803c-a1b4564984d8"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 8591,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

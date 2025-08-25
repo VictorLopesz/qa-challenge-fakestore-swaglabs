@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-25T00:07:24.994Z",
+    "end": "2025-08-25T00:07:25.955Z",
+    "duration": 961,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "27dcc6e1-decc-4522-85f6-b3a03f2dc1d9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\api-tests\\electronics.cy.js",
+      "file": "cypress\\e2e\\api-tests\\electronics.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e5767b27-d510-4faf-94df-21719d1e85da",
+          "title": "Electronics API Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should find electronics products with rate > 4",
+              "fullTitle": "Electronics API Test Should find electronics products with rate > 4",
+              "timedOut": null,
+              "duration": 908,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Call the api\ncy.request(\"https://fakestoreapi.com/products\").then(({\n  status,\n  body\n}) => {\n  expect(status).to.equal(200);\n  expect(body).to.be.an(\"array\");\n  // Read the response, find all objects with property “electronics”\n  const elecProds = body.filter(p => p.category === \"electronics\");\n  // Compare the response if the objects have the select property\n  expect(elecProds.every(p => p.category === \"electronics\")).to.be.true;\n  // Count how many electronics products were found \n  cy.log(`Total electronics products: ${elecProds.length}`);\n  // Verify the number of objects with the property above appears with rate bigger than 4      \n  const highRatedProds = elecProds.filter(p => {\n    var _p$rating;\n    return ((_p$rating = p.rating) === null || _p$rating === void 0 ? void 0 : _p$rating.rate) > 4;\n  });\n  expect(highRatedProds.every(p => p.rating && p.rating.rate > 4)).to.be.true;\n  //Finally print found objects to console\n  cy.log(`High-rated electronics products bigger than 4: ${highRatedProds.length}`);\n  expect(highRatedProds.length).to.be.greaterThan(0);\n});",
+              "err": {},
+              "uuid": "ff4eb1de-5601-42a8-8430-b66376f18662",
+              "parentUUID": "e5767b27-d510-4faf-94df-21719d1e85da",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ff4eb1de-5601-42a8-8430-b66376f18662"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 908,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

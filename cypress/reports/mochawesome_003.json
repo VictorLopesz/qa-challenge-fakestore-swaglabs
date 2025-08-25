@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-25T00:12:27.010Z",
+    "end": "2025-08-25T00:12:30.890Z",
+    "duration": 3880,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "34e25d4b-3348-4f70-b9d2-e5c1d64984c5",
+      "title": "",
+      "fullFile": "cypress\\e2e\\ui-tests\\swagLabs.cy.js",
+      "file": "cypress\\e2e\\ui-tests\\swagLabs.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6f0a6219-61d0-436e-8cd2-61d7b5b634ce",
+          "title": "Swag Labs UI Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify sorting Name A → Z and change to Z → A",
+              "fullTitle": "Swag Labs UI Test Verify sorting Name A → Z and change to Z → A",
+              "timedOut": null,
+              "duration": 3775,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Go to https://www.saucedemo.com/\ncy.loginPage();\n//Log in to the site. Verify that the items are sorted by Name ( A -> Z ).\ncy.isLoginSuccessful();\ncy.get('[data-test=\"product-sort-container\"]').should(\"have.value\", \"az\").and(\"be.visible\");\ncy.verifyProductOrder(\".inventory_item_name\", \"asc\");\n// Change the sorting to Name ( Z -> A) & Verify that the items are sorted correctly.\ncy.get('[data-test=\"product-sort-container\"]').select(\"za\", \"Name Z to A\");\ncy.verifyProductOrder(\".inventory_item_name\", \"desc\");",
+              "err": {},
+              "uuid": "b07a5fc6-0e31-4235-9416-a23109a4b39b",
+              "parentUUID": "6f0a6219-61d0-436e-8cd2-61d7b5b634ce",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b07a5fc6-0e31-4235-9416-a23109a4b39b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3775,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
