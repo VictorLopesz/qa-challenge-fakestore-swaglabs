@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-25T18:03:47.346Z",
+    "end": "2025-08-25T18:03:51.713Z",
+    "duration": 4367,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "550448c3-59b5-488f-a39a-03a86c1a069f",
+      "title": "",
+      "fullFile": "cypress\\e2e\\ui-tests\\swagLabs.cy.js",
+      "file": "cypress\\e2e\\ui-tests\\swagLabs.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fc30061a-839d-4345-a3d4-2c2afbe192f9",
+          "title": "SwagLabs UI Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify sorting Name A → Z and change to Z → A",
+              "fullTitle": "SwagLabs UI Test Verify sorting Name A → Z and change to Z → A",
+              "timedOut": null,
+              "duration": 4306,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.visit();\nloginPage.login(\"standard_user\", \"secret_sauce\");\nloginPage.isLoginSuccessful();\ninventoryPage.verifyProductOrder('asc');\ninventoryPage.sortProducts('za');\ninventoryPage.verifyProductOrder('desc');",
+              "err": {},
+              "uuid": "d10e2a62-0651-40bf-a90d-02de4a5fe75b",
+              "parentUUID": "fc30061a-839d-4345-a3d4-2c2afbe192f9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d10e2a62-0651-40bf-a90d-02de4a5fe75b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4306,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

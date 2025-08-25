@@ -1,0 +1,22 @@
+stages:
+  - test
+
+variables:
+  CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/.cache/Cypress"
+  CYPRESS_baseUrl: "https://www.saucedemo.com"
+
+cypress-tests:
+  image: cypress/base:18
+  stage: test
+  script:
+    - npm ci
+    - npx cypress verify
+    - npx cypress run --reporter junit --reporter-options "mochaFile=results/results-[hash].xml" # roda os testes e gera relatório JUnit
+  artifacts:
+    when: always
+    paths:
+      - cypress/videos
+      - cypress/screenshots
+      - results/
+  only:
+    - main
