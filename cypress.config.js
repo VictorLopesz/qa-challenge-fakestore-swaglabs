@@ -8,19 +8,26 @@ module.exports = defineConfig({
     html: true,
     json: true,
   },
-e2e: {
+  e2e: {
     setupNodeEvents(on, config) {
-      on('after:screenshot', (details) => {
-        console.log('Screenshot taken:', details.path)
+      on("after:screenshot", (details) => {
+        console.log("Screenshot taken:", details.path);
       });
 
-      on('after:run', (results) => {
-        console.log('Videos saved at:', results.video)
+      on("after:run", (results) => {
+        console.log("Videos saved at:", results.video);
       });
     },
-    baseUrl: 'https://www.saucedemo.com/',
+    baseUrl: "https://www.saucedemo.com/",
   },
-  screenshotsFolder: 'cypress/screenshots',
-  videosFolder: 'cypress/videos',
-  video: true
+  screenshotsFolder: "cypress/screenshots",
+  videosFolder: "cypress/videos",
+  video: true,
+  reporter: "mochawesome",
+  reporterOptions: {
+    reportDir: "cypress/reports",
+    overwrite: false,
+    html: true,
+    json: true,
+  },
 });
